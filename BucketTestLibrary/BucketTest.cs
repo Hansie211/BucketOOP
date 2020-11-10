@@ -1,4 +1,5 @@
 using BucketOOP.Buckets;
+using BucketOOP.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BucketTestLibrary

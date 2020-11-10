@@ -53,7 +53,7 @@
     <Compile Include="Buckets\Enums\CapacityOption.cs" />
     <Compile Include="Buckets\EventsArguments\OverflowedEventArgs.cs" />
     <Compile Include="Buckets\EventsArguments\OverflowingEventArgs.cs" />
-    <Compile Include="Buckets\MathExt.cs" />
+    <Compile Include="Extensions\MathExt.cs" />
     <Compile Include="Buckets\OilBarrel.cs" />
     <Compile Include="Buckets\RainBarrel.cs" />
     <Compile Include="Program.cs" />
