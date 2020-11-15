@@ -45,7 +45,7 @@ namespace BucketOOP.Buckets
             capacity = capacity ?? GetAttributeValue<DefaultCapacityAttribute>();
             content  = content ?? GetAttributeValue<DefaultContentAttribute>();
 
-            Capacity = capacity.Value;
+            Capacity = Math.Max( capacity.Value, GetAttributeValue<MinimumCapacityAttribute>() );
             Content  = content.Value.Clamp( GetAttributeValue<MinimumContentAttribute>(), capacity.Value );
         }
 
@@ -87,12 +87,11 @@ namespace BucketOOP.Buckets
 
             OnFull?.Invoke( this, EventArgs.Empty );
 
-            if ( Content == Capacity )
+            if ( overflowAmount > 0 )
             {
-                return originalAmount - amount;
+                OnOverflowed?.Invoke( this, new OverflowedEventArgs( originalAmount, amount, overflowAmount ) );
             }
 
-            OnOverflowed?.Invoke( this, new OverflowedEventArgs( originalAmount, amount, overflowAmount ) );
             return originalAmount - amount;
         }
 

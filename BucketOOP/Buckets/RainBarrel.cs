@@ -19,6 +19,10 @@ namespace BucketOOP.Buckets
 
         public RainBarrel( int content, CapacityOption capacity ) : base( content, (int)capacity )
         {
+            if ( !Enum.IsDefined( typeof( CapacityOption ), capacity ) )
+            {
+                throw new ArgumentOutOfRangeException( nameof( capacity ) );
+            }
         }
     }
 }
