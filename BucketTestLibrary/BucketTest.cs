@@ -7,7 +7,6 @@ namespace BucketTestLibrary
     [TestClass]
     public class BucketTest
     {
-
         // Emmer aanmaken met parameters
         // Emmer aanmaken met lege constructor
         // Emmer vullen ( in gedeeltes )
